@@ -17,3 +17,59 @@ h1,h2,h3,h4,h5,h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
 }
+
+body {
+	justify-content: center;
+}
+
+
+ .criminal-list {
+	display: grid;
+	justify-content: space-evenly;
+	grid-template-columns: repeat(3,1fr)
+
+
+}
+
+.criminal-card {
+	display: grid;
+	border: 1px dotted grey;
+	width: 250px;
+	height: auto;
+	padding: 5px;
+	margin: 5px;
+}
+
+.officer-list {
+	display: grid;
+	justify-content: space-evenly;
+	grid-template-columns: repeat(3,1fr);
+
+
+}
+
+.officer-card {
+	display: grid;
+	border: 1px dotted grey;
+	width: 250px;
+	height: auto;
+	padding: 5px;
+	margin: 5px;
+}
+
+.facilities-list {
+	display: grid;
+	justify-content: space-evenly;
+	grid-template-columns: repeat(3,1fr);
+
+
+}
+
+.facilities-card {
+	display: grid;
+	border: 1px dotted grey;
+	width: 250px;
+	height: auto;
+	padding: 5px;
+	margin: 5px;
+}

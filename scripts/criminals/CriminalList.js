@@ -13,8 +13,7 @@ export const CriminalList = () => {
 
         criminalsArray.forEach(singleCriminalObj => {
 
-            criminalHTML
- += Criminal(singleCriminalObj)
+            criminalHTML += Criminal(singleCriminalObj)
         });
 
         contentTarget.innerHTML = criminalHTML
