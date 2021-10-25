@@ -1,23 +1,32 @@
-import { Facilities } from "./Facilities.js"
-import { getFacilities, useFacilities } from "./FacilityDataProvider.js"
 
-const contentTarget = document.querySelector(".facilities-list")
+import { Location } from "./Facilities.js";
+import { useLocations, getLocations } from "./FacilityDataProvider.js";
 
-export const FacilityList = () => {
-    getFacilities()
-    .then(() =>{
+const contentTarget = document.querySelector(".print-list")
 
-        let facilitiesArray = useFacilities()
+export const LocationList = () => {
+  getLocations()
+  .then(() => {
 
-        let facilityHTML = "";
+    let allTheLocations = useLocations();
 
-        facilitiesArray.forEach(singleFacilityObj => {
+    let locationHTML = "";
 
-            facilityHTML += Facilities(singleFacilityObj)
-        });
+    allTheLocations.forEach((singleLocation) => {
 
-        contentTarget.innerHTML = facilityHTML
+        locationHTML += Location(singleLocation);
+
     });
 
+    contentTarget.innerHTML =    
+    `
+    <h2>Facilities</h2>
+    ${locationHTML}
+    `
 
+  });
 };
+
+document.querySelector("#facilities-nav-link").addEventListener("click", () => {
+  LocationList()
+}) 

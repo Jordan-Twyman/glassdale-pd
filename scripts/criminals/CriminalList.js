@@ -1,23 +1,33 @@
-import { Criminal } from "./Criminal.js"
-import { getCriminals, useCriminals } from "./CriminalDataProvider.js"
+import { Criminal } from "./Criminal.js";
+import { useCriminals, getCriminals } from "./CriminalDataProvider.js";
 
-const contentTarget = document.querySelector(".criminal-list")
+const contentTarget = document.querySelector(".print-list")
 
 export const CriminalList = () => {
-    getCriminals()
-    .then(() =>{
+  getCriminals()
+  .then(() => {
 
-        let criminalsArray = useCriminals()
+    let allTheCriminals = useCriminals();
 
-        let criminalHTML = "";
+    let criminalHTML = "";
 
-        criminalsArray.forEach(singleCriminalObj => {
+    allTheCriminals.forEach((singleCriminal) => {
 
-            criminalHTML += Criminal(singleCriminalObj)
-        });
-
-        contentTarget.innerHTML = criminalHTML
+        criminalHTML += Criminal(singleCriminal);
     });
 
+    contentTarget.innerHTML = `
+    <h2>Criminals</h2>
+    ${criminalHTML}`
 
+  });
 };
+
+document.querySelector("#criminals-nav-link").addEventListener("click", () => {
+  CriminalList()
+}) 
+
+
+
+ 
+

@@ -1,18 +1,16 @@
-export const Criminal = (criminals)=> {
+//Name
+// Age
+// Conviction
+// Dates of incarceration
+
+export const Criminal = (criminal) => {
     return `
-    <section class="criminal-card">
-    <section class= "criminal__name">
-    <b>${criminals.name}
-    </section><br></br>
-    <section  class= "criminal__age">
-    Age: ${criminals.age}
-    </section>
-    <section  class= "criminal__crime">
-    Crime: ${criminals.conviction}
-    </section>
-    <section = "criminal__date">
-    <div>Term Start: ${new Date(criminals.incarceration.start).toLocaleDateString('en-US')}</div>
-    <div>Term End: ${new Date(criminals.incarceration.end).toLocaleDateString('en-US')}</div>
-    </section></div></b></section>
+        <div class="col-sm-3 border border-dark m-3 list-group-item">
+        <h3>${criminal.name}</h3>
+        <p>Age: ${criminal.age}</p>
+        <p>Crime: ${criminal.conviction}</p>
+        <p>Term Start: ${new Date(criminal.incarceration.start).toLocaleDateString('en-US')}</p>
+        <p>Term End: ${new Date(criminal.incarceration.end).toLocaleDateString('en-US')}</p>
+        </div>
     `
-}
+} 

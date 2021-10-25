@@ -22,6 +22,9 @@ body {
 	justify-content: center;
 }
 
+.navbar {
+	background-color: blue;
+}
 
  .criminal-list {
 	display: grid;
@@ -73,3 +76,9 @@ body {
 	padding: 5px;
 	margin: 5px;
 }
+
+.dark-background{
+	background-color: #2b362e;
+	color: #fafcfb;
+  }
+  

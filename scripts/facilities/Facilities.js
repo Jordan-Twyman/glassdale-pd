@@ -1,10 +1,9 @@
-export const Facilities = (facilities)=> {
+export const Location = (Object) => {
     return `
-    <section class="facilities-card">
-    <div id="facility__id"${facilities.id}</div>
-    <div id="facility__name"${facilities.facilityName}</div>
-    <div id="facility__level"${facilities.securityLevel}</div>
-    <div id="facility__capacity"${facilities.capacity}</div>
-    </section>
+        <div class="col-md-4">
+        <ul>
+        <li class="list-group-item">${Object.facilityName}</li>
+        </ul>
+        </div>
     `
-}
+} 
