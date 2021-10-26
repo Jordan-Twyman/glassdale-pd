@@ -1,33 +1,37 @@
 import { getNotes, useNotes } from "./NoteDataProvider.js";
 import { Note } from "./Note.js";
+import { NoteForm } from "./NoteForm.js";
 
-const el = document.querySelector('.print-list');
+const contentTarget = document.querySelector('.print-list');
 
 document.querySelector('#notes-nav-link').addEventListener("click", function(){
   NoteList();
 });
 
 export const NoteList = () => {
-  let html = '';
+  let noteHTML = '';
 
   getNotes()
   .then(() => {
     const notes = useNotes();
 
-    html += `
+    noteHTML += `
       <section class="notes">
         <h2>Notes</h2>
         <div class="note-list flex-container">
     `;
 
 
-    notes.forEach( noteObj => html += Note(noteObj));
+    notes.forEach( noteObj => noteHTML += Note(noteObj));
 
-    html += `
+    noteHTML += `
         </div>
       </section>
     `;
 
-    el.innerHTML = html;
+    contentTarget.innerHTML = `
+    ${noteHTML}
+    `;
   });
 };
+

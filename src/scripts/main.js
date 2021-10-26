@@ -4,6 +4,6 @@ import { LocationList } from "./facilities/FacilityList.js";
 import { NoteList } from "./notes/NoteList.js";
 import { NoteForm } from "./notes/NoteForm.js";
 
-// NoteForm();
+NoteForm();
 
 

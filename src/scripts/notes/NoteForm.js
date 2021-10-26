@@ -1,17 +1,17 @@
 import { NoteList } from "./NoteList.js";
 import { saveNote } from "./NoteDataProvider.js";
 
-const el = document.querySelector('.note-form-container');
+const contentTarget = document.querySelector('.note-form-container');
 
 window.onload = () => {
-  const button = document.querySelector('#saveNote');
+  const clickEvent = document.querySelector('#saveNote');
 
   // Handler function for saving a note
-  // e is short for event
-  button.addEventListener("click", e => {
-    if (e.target.id === "saveNote") {
+ 
+  clickEvent.addEventListener("click", event => {
+    if (clickEvent.target.id === "saveNote") {
 
-      e.preventDefault();
+      event.preventDefault();
 
       // Convert the date from it's default value
       const noteDate = new Date(document.querySelector('#note-date').value).toLocaleDateString('en-US');
@@ -46,7 +46,7 @@ window.onload = () => {
 }
 
 export const NoteForm = () => {
-  el.innerHTML = `
+  contentTarget.innerHTML = `
   <form>
     <div>
       <label>Date:</label>
