@@ -17,7 +17,7 @@ document.querySelector("#officers-nav-link").addEventListener("click", () => {
   
       officerHTML += `
       <section class="officers">
-      <h2>Officers</h2>
+      <h1>Officers</h1>
       <div class="officers-list flex-container">
   `;
   

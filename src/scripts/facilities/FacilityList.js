@@ -19,7 +19,7 @@ export const LocationList = () => {
 
     facilityHTML += `
     <section class="facilities">
-    <h2>Facilties</h2>
+    <h1>Facilties</h1>
     <div class="facilities-list flex-container">
 `;
 

@@ -17,7 +17,7 @@ export const NoteList = () => {
 
     noteHTML += `
       <section class="notes">
-        <h2>Notes</h2>
+        <h1>Notes</h1>
         <div class="note-list flex-container">
     `;
 

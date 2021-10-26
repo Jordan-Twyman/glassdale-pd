@@ -17,7 +17,7 @@ export const CriminalList = () => {
 
     criminalHTML += `
     <section class="notes">
-    <h2>Criminals</h2>
+    <h1>Criminals</h1>
     <div class="note-list flex-container">
 `;
 
