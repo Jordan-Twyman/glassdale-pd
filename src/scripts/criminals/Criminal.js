@@ -5,7 +5,7 @@
 
 export const Criminal = (criminal) => {
     return `
-        <div class="col-sm-3 border border-dark m-3 list-group-item">
+        <div class="criminal-card col-md-4">
         <h3>${criminal.name}</h3>
         <p>Age: ${criminal.age}</p>
         <p>Crime: ${criminal.conviction}</p>

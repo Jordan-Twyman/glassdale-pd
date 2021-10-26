@@ -9,7 +9,7 @@ window.onload = () => {
   // Handler function for saving a note
  
   clickEvent.addEventListener("click", event => {
-    if (clickEvent.target.id === "saveNote") {
+    if (event.target.id === "saveNote") {
 
       event.preventDefault();
 

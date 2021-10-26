@@ -11,71 +11,39 @@ textarea {
 	font-family: "Comfortaa", Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
+	margin: 2px;
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
+ flex: 1;
 }
 
-body {
-	justify-content: center;
-}
 
 .navbar {
 	background-color: blue;
 }
 
- .criminal-list {
+ .print-list {
 	display: grid;
 	justify-content: space-evenly;
-	grid-template-columns: repeat(3,1fr)
-
-
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px 10px;
 }
 
-.criminal-card {
+
+.criminal-card, .officer-card, .note-card {
 	display: grid;
 	border: 1px dotted grey;
-	width: 250px;
+	width: 275px;
 	height: auto;
 	padding: 5px;
 	margin: 5px;
 }
 
-.officer-list {
-	display: grid;
-	justify-content: space-evenly;
-	grid-template-columns: repeat(3,1fr);
 
 
-}
-
-.officer-card {
-	display: grid;
-	border: 1px dotted grey;
-	width: 250px;
-	height: auto;
-	padding: 5px;
-	margin: 5px;
-}
-
-.facilities-list {
-	display: grid;
-	justify-content: space-evenly;
-	grid-template-columns: repeat(3,1fr);
-
-
-}
-
-.facilities-card {
-	display: grid;
-	border: 1px dotted grey;
-	width: 250px;
-	height: auto;
-	padding: 5px;
-	margin: 5px;
-}
 
 .dark-background{
 	background-color: #2b362e;
@@ -98,4 +66,27 @@ body {
   }
  .form-control {
 	 padding:auto;
+ }
+
+ .note-form-container {
+	display: flex;
+	justify-content: center; 
+ }
+ 
+ form {
+	 border: 1px solid black;
+	 padding: 10px 100px;
+ }
+
+ .flex-container {
+	 display: grid;
+	 grid-template-columns: repeat(3,1fr);
+	 grid-gap: 50px 100px;
+	
+ }
+
+ .notes {
+	 display: grid;
+	 justify-content: space-evenly;
+
  }
