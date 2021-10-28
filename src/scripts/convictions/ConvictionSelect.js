@@ -14,6 +14,7 @@ export const ConvictionSelect = () => {
 
 eventHub.addEventListener("change", (eventObj) => {
     if(eventObj.target.id === "crimeSelect"){
+        
         CriminalList(eventObj.target.value)
     }
 })
