@@ -8,7 +8,7 @@ export const useConvictions= () => {
 
 
 
-export const getconvictions = () => {
+export const getConvictions = () => {
     return fetch("https://criminals.glassdale.us/crimes")
     .then(response => response.json())
     .then(

@@ -1,39 +1,40 @@
-import { Criminal } from "./Criminal.js";
 import { useCriminals, getCriminals } from "./CriminalDataProvider.js";
+import { Criminal } from "./Criminal.js";
+import { ConvictionSelect } from "../convictions/ConvictionSelect.js";
 
-const contentTarget = document.querySelector(".print-list")
-
-document.querySelector("#criminals-nav-link").addEventListener("click", () => {
-  CriminalList()
-}) 
+const contentTarget = document.querySelector(".print-list");
+const criminalLink = document.querySelector("#criminals-nav-link");
 
 
-export const CriminalList = () => {
-  let criminalHTML = '';
-  getCriminals()
-  .then(() => {
+// Retrieve all criminals and create a HTML rendered list
+export const CriminalList = (convictionFilter) => {
 
-    let allTheCriminals = useCriminals();
+    contentTarget.innerHTML = "";
 
-    criminalHTML += `
-    <section class="notes">
-    <h1>Criminals</h1>
-    <div class="note-list flex-container">
-`;
+    getCriminals()
+    .then(() => {
+        let criminalArray = useCriminals();
+    
+    // If we get input from the convictions filter, filter our criminals so that we only see ones with that conviction
+    if (convictionFilter) {
+        criminalArray = criminalArray.filter((singleCriminal) => {
+           return singleCriminal ? singleCriminal.conviction === convictionFilter : false;
+        })
+    }
 
-    allTheCriminals.forEach(singleCriminal => criminalHTML += Criminal(singleCriminal));
+    criminalArray.forEach((singleCriminal) => {
+        contentTarget.innerHTML += Criminal(singleCriminal);
+    });
+    })
+    
+}
 
-       criminalHTML += `
-       </div>
-       </section>
-       `
-
-    contentTarget.innerHTML = `
-    ${criminalHTML}`
-
-  });
-};
-
+// Display all criminals when its navbar link is clicked
+criminalLink.addEventListener("click", function () {
+    document.querySelector('.note-form-container').innerHTML = "";
+    ConvictionSelect();
+    CriminalList();
+})
 
 
 
