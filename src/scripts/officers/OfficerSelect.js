@@ -14,18 +14,18 @@ export const OfficerSelect = () => {
     })
 }
 
-eventHub.addEventListener("change", (arrestObj) => {
-    if(arrestObj.target.id === "officerSelect"){
+// eventHub.addEventListener("change", (arrestObj) => {
+//     if(arrestObj.target.id === "officerSelect"){
 
-        const filterObj = {
-            type:"Arresting", 
-            value: arrestObj.target.value
+//         const filterObj = {
+//             type:"Arresting", 
+//             value: arrestObj.target.value
 
-        }
+//         }
         
-        CriminalList(filterObj)
-    }
-})
+//         CriminalList(filterObj)
+//     }
+// })
 
 const render = (arrestCollection) => {
     contentTarget.innerHTML = `

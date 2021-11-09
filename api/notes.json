@@ -1,24 +1,6 @@
 {
   "notes": [
     {
-      "id": 1,
-      "text": "i'm text",
-      "date": "10.22.2021",
-      "suspect": "Donny"
-    },
-    {
-      "date": "10/24/2021",
-      "suspect": "asd",
-      "text": "asd",
-      "id": 2
-    },
-    {
-      "date": "10/24/2021",
-      "suspect": "sus",
-      "text": "test 3",
-      "id": 3
-    },
-    {
       "date": "10/24/2021",
       "suspect": "sus",
       "text": "test 4",

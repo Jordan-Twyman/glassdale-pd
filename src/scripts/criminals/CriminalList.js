@@ -8,25 +8,23 @@ const criminalLink = document.querySelector("#criminals-nav-link");
 
 
 // Retrieve all criminals and create a HTML rendered list
-export const CriminalList = (filterObj) => {
+export const CriminalList = (targetID,selectFilter) => {
 
     contentTarget.innerHTML = "";
-
+    
     getCriminals()
     .then(() => {
         let criminalArray = useCriminals();
-    
-    // If we get input from the convictions filter, filter our criminals so that we only see ones with that conviction
-    // if (filterObj) {
-    //     criminalArray = criminalArray.filter((singleCriminal) => {
-    //        return singleCriminal ? singleCriminal.conviction === filterObj : false;
-    //     })
-    // }
 
-    if (filterObj?.type === "Arresting") {
+    // If we get input from the convictions filter, filter our criminals so that we only see ones with that conviction
+    if (targetID === "crimeSelect") {
         criminalArray = criminalArray.filter((singleCriminal) => {
-           return singleCriminal ? singleCriminal.arrestingOfficer === filterObj.value : false;
+           return singleCriminal ? singleCriminal.conviction === selectFilter : false;
         })
+    } else if (targetID === "officerSelect") {
+        criminalArray = criminalArray.filter((singleCriminal) => {
+            return singleCriminal ? singleCriminal.arrestingOfficer === selectFilter : false;
+         })
     }
 
     criminalArray.forEach((singleCriminal) => {

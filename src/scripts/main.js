@@ -9,4 +9,3 @@ import { OfficerSelect } from "./officers/OfficerSelect.js"
 
 NoteForm();
 NoteList();
-OfficerSelect();
