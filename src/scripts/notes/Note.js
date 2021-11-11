@@ -9,17 +9,22 @@ import { NoteEditForm } from "./NoteEditForm.js";
   const eventHub = document.querySelector(".print-list")
 
   eventHub.addEventListener("click", (eventObject) => {
+
+    const noteId = eventObject.target.id.split("--")[1];
+
+    if (eventObject.target.id.startsWith("editNote")) {
+      // console.log("hello world")
+     NoteEditForm(noteId);
+    }
+
     if (eventObject.target.id.startsWith("deleteNote")) {
-      const idToDelete = eventObject.target.id.split("--")[1]
-      deleteNote(idToDelete)
+      
+      deleteNote(noteId)
       .then(NoteList);
   //     // ---------- Write your code here -------------//
   //     // Call the deleteNote function and pass in the appropriate id
   //     // Then call NoteList to refresh the list of notes
-       if (eventObject.target.id.startsWith("editNote")) {
-        const noteId = +eventObject.target.id.split("--")[1]
-        NoteEditForm(noteId);
-      }
+    
 }
   });
 
@@ -29,7 +34,8 @@ export const Note = (notes) => {
       <section class="note-card">
         <h3 class="note__suspect">Suspect: ${notes.suspect}</h3>
         <p class="note__text">${notes.text}</p>
-        <p class="note__date"><b>Date: </b> ${notes.date}</p>
+        <p class="note__date"><b>Date: </b> ${new Date(notes.date).toLocaleDateString('en-US', { year: "numeric", day: "numeric", month: "numeric"})
+      }</p>
         <section class="note__buttons">
         <button id="deleteNote--${notes.id}">Delete</button>
         <button id="editNote--${notes.id}">Edit</button>
