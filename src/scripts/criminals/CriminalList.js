@@ -36,7 +36,7 @@ export const CriminalList = (targetID,selectFilter) => {
 
 // Display all criminals when its navbar link is clicked
 criminalLink.addEventListener("click", function () {
-    document.querySelector('.note-form-container').innerHTML = "";
+    document.querySelector('.print-list').innerHTML = "";
     ConvictionSelect();
     OfficerSelect();
     CriminalList();
