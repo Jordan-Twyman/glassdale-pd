@@ -40,7 +40,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 
-.criminal-card, .officer-card, .note-card {
+.criminal-card, .officer-card, .note-card, .facilities-card {
 	display: grid;
 	border: 1px dotted grey;
 	width: 275px;
