@@ -1,5 +1,5 @@
-import { useCriminals, getCriminals } from "./CriminalDataProvider.js";
-import { Criminal } from "./Criminal.js";
+import { useCriminals, getCriminals } from "../criminals/CriminalDataProvider.js";
+import { Criminal } from "../criminals/Criminal.js";
 import { ConvictionSelect } from "../convictions/ConvictionSelect.js";
 import { OfficerSelect } from "../officers/OfficerSelect.js";
 

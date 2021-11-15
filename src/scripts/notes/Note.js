@@ -29,16 +29,16 @@ import { NoteEditForm } from "./NoteEditForm.js";
   });
 
 
-export const Note = (notes, criminals) => {
+export const Note = (note, criminal) => {
     return `
       <section class="note-card">
-        <h3 class="note__suspect">Suspect: ${criminals.name}</h3>
-        <p class="note__text">${notes.text}</p>
-        <p class="note__date"><b>Date: </b> ${new Date(notes.date).toLocaleDateString('en-US', { year: "numeric", day: "numeric", month: "numeric"})
+        <h3 class="note__suspect">Suspect: ${criminal.name}</h3>
+        <p class="note__text">${note.text}</p>
+        <p class="note__date"><b>Date: </b> ${new Date(note.date).toLocaleDateString('en-US', { year: "numeric", day: "numeric", month: "numeric"})
       }</p>
         <section class="note__buttons">
-        <button id="deleteNote--${notes.id}">Delete</button>
-        <button id="editNote--${notes.id}">Edit</button>
+        <button id="deleteNote--${note.id}">Delete</button>
+        <button id="editNote--${note.id}">Edit</button>
         </section>
       </section>
     `

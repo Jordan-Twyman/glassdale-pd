@@ -3,8 +3,11 @@ import { getNotes,useNotes } from "./NoteDataProvider.js";
 import { NoteForm } from "./NoteForm.js";
 import { getCriminals, useCriminals } from "../criminals/CriminalDataProvider.js"
 
-const notesNavigation = document.querySelector('#notes-nav-link');
-const contentTarget = document.querySelector(".print-list");
+const contentTarget = document.querySelector('.print-list');
+
+document.querySelector('#notes-nav-link').addEventListener("click", function(){
+  NoteList();
+});
 
 // Retrieve all officers and create a HTML rendered list
 export const NoteList = () => {
@@ -17,17 +20,13 @@ export const NoteList = () => {
         notesArray.map(note => {
             const relatedCriminal = criminalsArray.find(criminal => criminal.id === note.criminalId)
             noteListHTML += Note(note,relatedCriminal);
-            contentTarget.innerHTML = `
-            <h2 class="heading">Notes</h2>
+            contentTarget.innerHTML = `<section class="note-list-container">
+            <h1 class="heading">Notes</h1>
             ${noteListHTML}
+            </section>
         `
         })
     })
 }
 
 // Display all officers when its navbar link is clicked
-notesNavigation.addEventListener("click", function () {
-    document.querySelector('.filters-crime').innerHTML = "";
-    NoteForm();
-    NoteList();
- })

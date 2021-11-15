@@ -5,13 +5,11 @@ import { useCriminals, getCriminals } from "../criminals/CriminalDataProvider.js
 
 const contentTarget = document.querySelector('.note-form-container');
 
-window.onload = () => {
-  const clickEvent = document.querySelector('#saveNote');
 
-  // Handler function for saving a note
  
-  clickEvent.addEventListener("click", event => {
+  contentTarget.addEventListener("click", event => {
     if (event.target.id === "saveNote") {
+      console.log('hello')
 
       event.preventDefault();
 
@@ -20,20 +18,19 @@ window.onload = () => {
       
       const newNote = {
         date: noteDate,
-        criminalId: parseInt(document.querySelector('#noteForm').value),
-        text: document.querySelector('#note-text').value
+        criminalId: parseInt(document.querySelector('#noteForm--criminal').value),
+        text: document.querySelector('#note-text').value,
       }
 
       // Clear form values after creating form body data
       document.querySelector('#note-date').value = '';
-      document.querySelector('#note-suspect').value = '';
       document.querySelector('#note-text').value = '';
 
 
 
       // If any of the form values are empty then display where valid information is needed
-      if (newNote.date === 'Invalid Date' || newNote.criminalId === '' || newNote.text === '') {
-        alert('Please enter valid values')
+      if (newNote.date === 'Invalid Date' || newNote.criminalId === "0" || newNote.text === '') {
+        alert('Please enter valid input values')
 
       // Otherwise we can go ahead and make this a new note
       } else {
@@ -45,7 +42,7 @@ window.onload = () => {
       }
     }
   });
-}
+
 
 export const NoteForm = () => {
   getCriminals()
