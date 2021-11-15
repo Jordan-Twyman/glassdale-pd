@@ -1,5 +1,7 @@
 import { NoteList } from "./NoteList.js";
 import { saveNote } from "./NoteDataProvider.js";
+import { useCriminals, getCriminals } from "../criminals/CriminalDataProvider.js";
+
 
 const contentTarget = document.querySelector('.note-form-container');
 
@@ -18,7 +20,7 @@ window.onload = () => {
       
       const newNote = {
         date: noteDate,
-        suspect: document.querySelector('#note-suspect').value,
+        criminalId: parseInt(document.querySelector('#noteForm').value),
         text: document.querySelector('#note-text').value
       }
 
@@ -30,7 +32,7 @@ window.onload = () => {
 
 
       // If any of the form values are empty then display where valid information is needed
-      if (newNote.date === 'Invalid Date' || newNote.suspect === '' || newNote.text === '') {
+      if (newNote.date === 'Invalid Date' || newNote.criminalId === '' || newNote.text === '') {
         alert('Please enter valid values')
 
       // Otherwise we can go ahead and make this a new note
@@ -46,6 +48,9 @@ window.onload = () => {
 }
 
 export const NoteForm = () => {
+  getCriminals()
+  .then(() => {
+    const criminalsArray = useCriminals();
   contentTarget.innerHTML = `
   <form>
     <div>
@@ -55,7 +60,14 @@ export const NoteForm = () => {
     <div>
       <label>Suspect:</label>
     </div>
-      <input type="text" id="note-suspect" placeholder="Suspect name here">
+    <select id="noteForm--criminal" class="criminalSelect">
+    <option value="0">Select a criminal..</option>
+    ${
+      criminalsArray.map((criminal) => {
+          return `<option value="${criminal.id}">${criminal.name}</option>`
+      })
+  }
+</select>
     <div>
       <label>Note:</label>
     </div>
@@ -65,4 +77,5 @@ export const NoteForm = () => {
     </div>
   </form>
   `;
+})
 }

@@ -1,22 +1,10 @@
 {
   "notes": [
-    {
-      "id": 31,
-      "text": "Whitney was said to have driven the getaway vehicle for a recent armed robbery.",
-      "suspect": "Whitney Wilson",
-      "date": "2021-11-03"
-    },
-    {
-      "id": 33,
-      "text": "No evidence.",
-      "suspect": "Jason Weller",
-      "date": "2021-11-08"
-    },
-    {
-      "id": 34,
-      "text": "Stole my first name.",
-      "suspect": "Woman Jordan",
-      "date": "2021-11-08"
-    }
+      {
+          "id": 1,
+          "text": "This is a possible suspect because she was not incarcerated at the time and had a motive.",
+          "criminalId": 5,
+          "date":"2021-11-11"
+      }
   ]
 }
