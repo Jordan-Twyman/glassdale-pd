@@ -1,22 +1,10 @@
 {
   "notes": [
     {
-      "id": 1,
-      "text": "This is a possible suspect because she was not incarcerated at the time and had a motive.",
-      "criminalId": 5,
-      "date": "2021-11-11"
-    },
-    {
-      "date": "11/8/2021",
-      "criminalId": 13,
-      "text": "Last seen in an early 2000's gold honda civic",
-      "id": 2
-    },
-    {
-      "date": "11/13/2021",
-      "criminalId": 8,
-      "text": "test",
-      "id": 3
+      "date": "11/14/2021",
+      "criminalId": 94,
+      "text": "She done did it",
+      "id": 4
     }
   ]
 }

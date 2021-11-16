@@ -9,7 +9,7 @@ const contentTarget = document.querySelector('.note-form-container');
  
   contentTarget.addEventListener("click", event => {
     if (event.target.id === "saveNote") {
-      console.log('hello')
+      // console.log('hello
 
       event.preventDefault();
 
@@ -25,6 +25,7 @@ const contentTarget = document.querySelector('.note-form-container');
       // Clear form values after creating form body data
       document.querySelector('#note-date').value = '';
       document.querySelector('#note-text').value = '';
+      document.querySelector("#criminal-FK").value = 0;
 
 
 

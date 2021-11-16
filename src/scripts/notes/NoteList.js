@@ -25,11 +25,11 @@ export const NoteList = () => {
         
         notesArray.map(note => {
             const relatedCriminal = criminalsArray.find(criminal => criminal.id === note.criminalId)
+            
             noteListHTML += Note(note,relatedCriminal);
             contentTarget.innerHTML = `${noteListHTML}`
         
         })
     })
 }
-
 // Display all officers when its navbar link is clicked
