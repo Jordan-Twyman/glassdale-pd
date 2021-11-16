@@ -7,8 +7,8 @@ button,
 input,
 select,
 textarea {
-	background-color: aliceblue;
-	color: #404040;
+	background-color: rgb(108, 141, 172);
+	color: black;
 	font-family: "Comfortaa", Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
@@ -16,7 +16,7 @@ textarea {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: "Patua One", serif;
+  font-family: "Patua One", sans-serif;
   letter-spacing: 2px;
   margin: 25px 0;
 }
@@ -47,15 +47,15 @@ h1,h2,h3,h4,h5,h6 {
 	height: auto;
 	padding: 5px 15px;
 	margin: 5px;
-	background-color:white;
+	background-color:rgb(197, 197, 193);
 }
 
 
 
 
 .dark-background{
-	background-color: #2b362e;
-	color: #fafcfb;
+	background-color: black;
+	color: rgb(197, 197, 193)
   }
 
   .navbar {
@@ -85,7 +85,7 @@ h1,h2,h3,h4,h5,h6 {
  form {
 	 border: 1px solid black;
 	 padding: 10px 100px;
-	 background-color: white;
+	 background-color: rgb(197, 197, 193);
  }
 
  .flex-container {
@@ -101,6 +101,6 @@ h1,h2,h3,h4,h5,h6 {
 
  }
 
- #note-date, #note-text, #note-suspect, #saveNote {
+ #note-date, #note-text, #note-suspect, #saveNote, .criminalSelect, #officerSelect, #crimeSelect {
 	 background-color: white;
  }

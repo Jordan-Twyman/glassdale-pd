@@ -1,8 +1,8 @@
 export const Location = (Object) => {
     return `
-        <div class="facilitities-card">
-        <div class="list-group-item">${Object.facilityName}
+        <div class="facilities-card">
+        <h3>${Object.facilityName}</h3>
         </div>
-        </div>
+        
     `
 } 
