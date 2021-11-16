@@ -14,18 +14,6 @@ export const OfficerSelect = () => {
     })
 }
 
-// eventHub.addEventListener("change", (arrestObj) => {
-//     if(arrestObj.target.id === "officerSelect"){
-
-//         const filterObj = {
-//             type:"Arresting", 
-//             value: arrestObj.target.value
-
-//         }
-        
-//         CriminalList(filterObj)
-//     }
-// })
 
 const render = (arrestCollection) => {
     contentTarget.innerHTML = `

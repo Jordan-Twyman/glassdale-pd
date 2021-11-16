@@ -11,20 +11,23 @@ document.querySelector('#notes-nav-link').addEventListener("click", function(){
 
 // Retrieve all officers and create a HTML rendered list
 export const NoteList = () => {
+    let noteListHTML = "";
     getNotes()
     .then(getCriminals)
     .then(() => {
         const notesArray = useNotes();
         const criminalsArray = useCriminals();
-        let noteListHTML = "";
+
+        noteListHTML += `
+        <section class="notes">
+        <h1>Notes</h1>
+        <div class="notes-list flex-container">`;
+        
         notesArray.map(note => {
             const relatedCriminal = criminalsArray.find(criminal => criminal.id === note.criminalId)
             noteListHTML += Note(note,relatedCriminal);
-            contentTarget.innerHTML = `<section class="note-list-container">
-            <h1 class="heading">Notes</h1>
-            ${noteListHTML}
-            </section>
-        `
+            contentTarget.innerHTML = `${noteListHTML}`
+        
         })
     })
 }
