@@ -26,23 +26,23 @@ export const CriminalList = (targetID, selectFilter) => {
                 let criminals = useCriminals()
 
                 // Pass all three collections of data to render()
-                render(criminals, facilities, crimFac);
+                render(criminals, facilities, crimFac);})
             
         
 
-        if (targetID === "crimeSelect") {
-                    criminals = criminals.filter((singleCriminal) => {
-                       return singleCriminal ? singleCriminal.conviction === selectFilter : false;
-                    })
-                } else if (targetID === "officerSelect") {
-                    criminals = criminals.filter((singleCriminal) => {
-                        return singleCriminal ? singleCriminal.arrestingOfficer === selectFilter : false;
-                     })
-                }
-                criminals.forEach((singleCriminal) => {
-                            contentTarget.innerHTML += Criminal(singleCriminal);
-                        });})
-}
+//         if (targetID === "crimeSelect") {
+//                     criminals = criminals.filter((singleCriminal) => {
+//                        return singleCriminal ? singleCriminal.conviction === selectFilter : false;
+//                     })
+//                 } else if (targetID === "officerSelect") {
+//                     criminals = criminals.filter((singleCriminal) => {
+//                         return singleCriminal ? singleCriminal.arrestingOfficer === selectFilter : false;
+//                      })
+//                 }
+//                 criminals.forEach((singleCriminal) => {
+//                             contentTarget.innerHTML += Criminal(criminalObject);
+//                         });})
+
 
 
 const render = (criminalsToRender, allFacilities, allRelationships) => {
@@ -62,7 +62,7 @@ const render = (criminalsToRender, allFacilities, allRelationships) => {
             return Criminal(criminalObject, facilities)
         }
     ).join("")
-}
+}}
 
 
 // Retrieve all criminals and create a HTML rendered list
