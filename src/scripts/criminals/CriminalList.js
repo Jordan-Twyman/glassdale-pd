@@ -11,7 +11,9 @@ const contentTarget = document.querySelector(".print-list");
 const criminalLink = document.querySelector("#criminals-nav-link");
 
 
-export const CriminalList = () => {
+export const CriminalList = (targetID, selectFilter) => {
+
+    contentTarget.innerHTML = "";
     // Kick off the fetching of both collections of data
     getCriminals()
     .then(getLocations)
@@ -21,12 +23,25 @@ export const CriminalList = () => {
                 // Pull in the data now that it has been fetched
                 const facilities = useLocations()
                 const crimFac = useCriminalFacilities()
-                const criminals = useCriminals()
+                let criminals = useCriminals()
 
                 // Pass all three collections of data to render()
-                render(criminals, facilities, crimFac)
-            }
-        )
+                render(criminals, facilities, crimFac);
+            
+        
+
+        if (targetID === "crimeSelect") {
+                    criminals = criminals.filter((singleCriminal) => {
+                       return singleCriminal ? singleCriminal.conviction === selectFilter : false;
+                    })
+                } else if (targetID === "officerSelect") {
+                    criminals = criminals.filter((singleCriminal) => {
+                        return singleCriminal ? singleCriminal.arrestingOfficer === selectFilter : false;
+                     })
+                }
+                criminals.forEach((singleCriminal) => {
+                            contentTarget.innerHTML += Criminal(singleCriminal);
+                        });})
 }
 
 
@@ -51,7 +66,7 @@ const render = (criminalsToRender, allFacilities, allRelationships) => {
 
 
 // Retrieve all criminals and create a HTML rendered list
-// export const CriminalList = (targetID,selectFilter) => {
+// export const CriminalFilter = (targetID,selectFilter) => {
 
 //     contentTarget.innerHTML = "";
     
@@ -69,7 +84,7 @@ const render = (criminalsToRender, allFacilities, allRelationships) => {
 //             return singleCriminal ? singleCriminal.arrestingOfficer === selectFilter : false;
 //          })
 //     }
-
+// debugger
 //     criminalArray.forEach((singleCriminal) => {
 //         contentTarget.innerHTML += Criminal(singleCriminal);
 //     });

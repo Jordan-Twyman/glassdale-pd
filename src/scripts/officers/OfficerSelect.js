@@ -3,6 +3,7 @@ import { OfficerList } from "../officers/OfficerList.js";
 import { CriminalList } from "../criminals/CriminalList.js";
 import { getConvictions, useConvictions } from "../convictions/ConvictionDataProvider.js";
 
+
 const contentTarget = document.querySelector(".filters-officer");
 const eventHub = document.querySelector("body");
 
