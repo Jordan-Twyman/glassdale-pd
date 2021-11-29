@@ -1,5 +1,7 @@
 import { useConvictions, getConvictions } from "./ConvictionDataProvider.js";
 import { CriminalList } from "../criminals/CriminalList.js";
+import { OfficerSelect } from "../officers/OfficerSelect.js";
+
 
 const contentTarget = document.querySelector(".filters-crime");
 const eventHub = document.querySelector("body");
@@ -11,17 +13,14 @@ export const ConvictionSelect = () => {
         render(convictions);
     })
 }
-//      renders conviction filter list
+
 eventHub.addEventListener("change", (eventObj) => {
     if(eventObj.target.id === "crimeSelect"){
         CriminalList("crimeSelect", eventObj.target.value)
-
-        // renders officer filter list
     } else if (eventObj.target.id === "officerSelect") {
         CriminalList("officerSelect", eventObj.target.value)
     }
 })
-// renders conviction dropdown format
 
 const render = (convictionsCollection) => {
     contentTarget.innerHTML = `

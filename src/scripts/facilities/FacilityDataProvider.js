@@ -1,7 +1,7 @@
-let locationsArray = []
+let facilities = []
 
 export const useLocations = () => {
-    return locationsArray.slice()
+    return facilities.slice()
 }
 
 export const getLocations = () => {
@@ -10,7 +10,7 @@ export const getLocations = () => {
         .then(
             cleanLocations => {
                 console.table(cleanLocations)
-                locationsArray = cleanLocations
+                facilities = cleanLocations
             }
         )
 } 
